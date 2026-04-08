@@ -1,0 +1,33 @@
+# Python / Environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.venv/
+venv/
+env/
+.env
+
+# System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs / Editor
+.vscode/
+.idea/
+
+# Forensic Evidence / Uploads (Safety Net)
+# Never upload real target files to standard repositories.
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.heic
+*.heif
+*.tiff
+
+# Documentation / Screenshots
+# .docs/ are included in git structure, so we explicitly do NOT ignore .docs/
+# But if you keep raw drafts in .docs/raw, ignore them:
+.docs/raw/

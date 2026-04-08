@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>M•EXTRACTOR // OSINT DATA</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>👨‍💻</text></svg>">
+
+    <!-- Google Fonts: Space Mono for data, Syncopate for headers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Leaflet via CDN -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <!-- Grid Overlay pattern -->
+    <div class="grid-overlay"></div>
+    <div class="scanline"></div>
+
+    <header class="hud-header">
+      <div class="hud-header-line top"></div>
+      <h1 class="glitch" data-text="M•EXTRACTOR :: OSINT DATA">
+        M•EXTRACTOR :: OSINT DATA
+      </h1>
+      <div class="hud-subtitle">[ SYSTEM READY: AWAITING IMAGE INPUT ]</div>
+      <div class="hud-header-line bottom"></div>
+    </header>
+
+    <main class="container">
+      <!-- Form Section -->
+      <section class="upload-section hud-panel pop-in">
+        <div class="panel-corner-tl"></div>
+        <div class="panel-corner-br"></div>
+
+        <form id="uploadForm">
+          <div class="file-drop-area">
+            <span class="file-instruction">> INITIALIZE UPLOAD SEQUENCE <</span>
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/jpeg, image/png, image/webp"
+              required />
+          </div>
+          <button type="submit" id="extractBtn">
+            <span class="btn-text">EXECUTE EXTRACTION</span>
+            <span class="btn-glitch"></span>
+          </button>
+        </form>
+        <div id="statusMessage" class="status-feed">_[ status: idle ]_</div>
+      </section>
+
+      <!-- Results Section Container -->
+      <section class="results-section hidden" id="resultsContainer">
+        <!-- Metadata Cards -->
+        <div class="metadata-card hud-panel slide-up">
+          <div class="panel-corner-tl"></div>
+          <div class="panel-corner-br"></div>
+          <h2 class="panel-title">>> DATA_PAYLOAD</h2>
+          <div class="cli-window">
+            <div class="cli-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="cli-title">/raw_metadata.json</span>
+            </div>
+            <pre id="metadataContent" class="typewriter"></pre>
+          </div>
+        </div>
+
+        <!-- Map Leaflet Container -->
+        <div class="map-card hud-panel slide-up">
+          <div class="panel-corner-tl"></div>
+          <div class="panel-corner-br"></div>
+          <h2 class="panel-title">>> GEO_LOCATION</h2>
+          <div class="map-wrapper">
+            <div id="map"></div>
+            <!-- Radar overlay specifically for the map -->
+            <div class="radar-sweep"></div>
+          </div>
+          <div id="noGpsMessage" class="hidden system-alert">
+            [ WARNING: NO GPS COORDINATES DETECTED ]
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Leaflet JS via CDN -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>
