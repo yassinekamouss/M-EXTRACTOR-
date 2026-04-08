@@ -26,3 +26,7 @@ Desktop.ini
 *.heic
 *.heif
 *.tiff
+
+# EXCEPTIONS: Allow images in the .docs folder
+!/.docs/*.png
+!/.docs/*.jpg
