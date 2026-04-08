@@ -26,8 +26,3 @@ Desktop.ini
 *.heic
 *.heif
 *.tiff
-
-# Documentation / Screenshots
-# .docs/ are included in git structure, so we explicitly do NOT ignore .docs/
-# But if you keep raw drafts in .docs/raw, ignore them:
-.docs/raw/
