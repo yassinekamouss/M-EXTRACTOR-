@@ -62,7 +62,7 @@ To instantiate the isolated environment, execute the following commands:
 
 ```bash
 # Clone the forensic repository
-git clone [https://github.com/organization/m-extractor.git](https://github.com/organization/m-extractor.git) && cd m-extractor
+git clone https://github.com/yassinekamouss/M-EXTRACTOR-.git && cd M-EXTRACTOR-
 
 # Instantiate isolated volatile environment
 python3 -m venv .venv && source .venv/bin/activate
